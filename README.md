@@ -242,6 +242,13 @@ vite.config.js                    Vite configuration and API proxy
 
 The prototype persists data in [data/store.json](<C:/Users/buddh/OneDrive/Desktop/Road to wells fargo/data/store.json>). It is intentionally simple for local development.
 
+Images:
+
+<img width="1917" height="865" alt="Screenshot 2026-11-14 224530" src="https://github.com/user-attachments/assets/130837ce-394b-4fdb-8dff-e145e44ba9f3" />
+<img width="1917" height="871" alt="Screenshot 2026-11-14 224515" src="https://github.com/user-attachments/assets/6d6845e6-af72-4122-b513-5192d34034b8" />
+<img width="1917" height="867" alt="Screenshot 2026-11-14 224501" src="https://github.com/user-attachments/assets/a65156f7-c52e-4bde-917c-c57e79a2175f" />
+<img width="1916" height="867" alt="Screenshot 2026-11-14 224411" src="https://github.com/user-attachments/assets/b375b144-ec0b-4dfc-98b2-58456171a904" />
+
 Before production use, the development team should add:
 
 Add authentication and enforce permissions in the API, not only the UI.
