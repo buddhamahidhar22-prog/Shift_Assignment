@@ -1,0 +1,131 @@
+{
+  "engineers": [
+    {
+      "id": 36,
+      "name": "Engineer 1",
+      "shift": "Shift-1",
+      "task": "T1",
+      "availability": "Change Call",
+      "teams": "Offline",
+      "changeNumber": "CHG123243546"
+    },
+    {
+      "id": 37,
+      "name": "Engineer 2",
+      "shift": "Shift-1",
+      "task": "T1",
+      "availability": "Change Call",
+      "teams": "Busy"
+    },
+    {
+      "id": 40,
+      "name": "Engineer 3",
+      "shift": "Shift-1",
+      "task": "T2",
+      "availability": "Available",
+      "teams": "Offline"
+    },
+    {
+      "id": 41,
+      "name": "Engineer 4",
+      "shift": "Shift-1",
+      "task": "T2",
+      "availability": "Available",
+      "teams": "Offline"
+    },
+    {
+      "id": 42,
+      "name": "Engineer 5",
+      "shift": "Shift-1",
+      "task": "T2",
+      "availability": "Available",
+      "teams": "Offline"
+    },
+    {
+      "id": 45,
+      "name": "Engineer 6",
+      "shift": "Shift-1",
+      "task": "T3",
+      "availability": "On Break",
+      "teams": "Offline"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T1",
+      "name": "Incident Dashboard Monitoring, Critical INCs, MIM"
+    },
+    {
+      "id": "T2",
+      "name": "Non Autosys / AUTOSYS / Automation Folder"
+    },
+    {
+      "id": "T3",
+      "name": "HO, DD, Prod Line, Mailboxes, CT-Mission Control"
+    },
+    {
+      "id": "T4",
+      "name": "CTASK & INC's"
+    },
+    {
+      "id": "T5",
+      "name": "Shift Monitoring, Change Approvals, Peer Reviews"
+    }
+  ],
+  "breaks": [],
+  "dailyTaskset": {
+    "date": "2026-11-14",
+    "published": true,
+    "publishedAt": "2026-11-14T17:13:52.148Z",
+    "assignments": {
+      "T1": {
+        "Shift-1": [
+          36,
+          37
+        ],
+        "Shift-2": [
+          36,
+          40
+        ]
+      },
+      "T2": {
+        "Shift-1": [
+          37,
+          41,
+          42
+        ],
+        "Shift-2": [
+          40,
+          45
+        ]
+      },
+      "T3": {
+        "Shift-1": [
+          36
+        ],
+        "Shift-2": [
+          41
+        ]
+      },
+      "T4": {
+        "Shift-1": [
+          37,
+          42
+        ],
+        "Shift-2": [
+          40
+        ]
+      },
+      "T5": {
+        "Shift-1": [
+          40,
+          41
+        ],
+        "Shift-2": [
+          45
+        ]
+      }
+    }
+  },
+  "lastTeamsSync": "2026-11-14T16:32:39.772Z"
+}
