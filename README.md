@@ -32,9 +32,20 @@ The Vite development server proxies `/api` requests to the Node API on port `300
 
 Vercel builds the Vite frontend and deploys the catch-all API function in
 `api/[...path].js`. The local `server.js` is still used for local development.
-The Vercel function keeps state in memory, so its prototype data can reset when
-the serverless function is restarted. Use a hosted database or KV store before
-using this application for shared production operations.
+The Vercel function keeps state in memory, so data can reset when the serverless
+function is restarted or scaled to another instance. Use a hosted database or
+KV store before using this application for shared production operations.
+
+To deploy:
+
+1. Push the repository to GitHub and import it into Vercel.
+2. Keep the framework preset as **Vite**. The repository includes `vercel.json`
+   with the build command and `dist` output directory.
+3. Deploy. The frontend and `/api/*` routes are served from the same Vercel
+   project, so no API URL environment variable is required.
+
+For local development, run `npm run server` and `npm run dev` in separate
+terminals. The Vite proxy continues to forward `/api` requests to port `3001`.
 
 ## Application views
 
@@ -212,7 +223,8 @@ The **Sync Teams** button currently simulates a Teams synchronization by assigni
 
 ## API routes
 
-The local API is implemented in [server.js](<C:/Users/buddh/OneDrive/Desktop/Road to wells fargo/server.js>).
+The local API is implemented in [server.js](server.js), with the shared route
+handler in [api/handler.js](api/handler.js).
 
 | Method | Route | Purpose |
 |---|---|---|
@@ -228,6 +240,9 @@ The local API is implemented in [server.js](<C:/Users/buddh/OneDrive/Desktop/Roa
 ## Project structure
 
 ```text
+api/
+  [...path].js                    Vercel catch-all API function
+  handler.js                      Shared API route implementation
 src/
   App.jsx                         Main dashboard and workflows
   App.css                         Dark operational-console styling
@@ -236,18 +251,14 @@ src/
 server.js                         Local Node API and JSON persistence
 data/store.json                   Local prototype data store
 vite.config.js                    Vite configuration and API proxy
+vercel.json                       Vercel build configuration
 ```
 
 ## Persistence and production notes
 
-The prototype persists data in [data/store.json](<C:/Users/buddh/OneDrive/Desktop/Road to wells fargo/data/store.json>). It is intentionally simple for local development.
-
-Images:
-
-<img width="1917" height="865" alt="Screenshot 2026-11-14 224530" src="https://github.com/user-attachments/assets/130837ce-394b-4fdb-8dff-e145e44ba9f3" />
-<img width="1917" height="871" alt="Screenshot 2026-11-14 224515" src="https://github.com/user-attachments/assets/6d6845e6-af72-4122-b513-5192d34034b8" />
-<img width="1917" height="867" alt="Screenshot 2026-11-14 224501" src="https://github.com/user-attachments/assets/a65156f7-c52e-4bde-917c-c57e79a2175f" />
-<img width="1916" height="867" alt="Screenshot 2026-11-14 224411" src="https://github.com/user-attachments/assets/b375b144-ec0b-4dfc-98b2-58456171a904" />
+The prototype persists data in [data/store.json](data/store.json) locally. The
+Vercel function uses in-memory state because serverless filesystem writes are
+not durable.
 
 Before production use, the development team should add:
 
