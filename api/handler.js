@@ -1,11 +1,11 @@
 const seed = {
   engineers: [],
   tasks: [
-    { id: 'T1', name: 'Incident Dashboard Monitoring, Critical INCs, MIM' },
-    { id: 'T2', name: 'Non Autosys / AUTOSYS / Automation Folder' },
-    { id: 'T3', name: 'HO, DD, Prod Line, Mailboxes, CT-Mission Control' },
+    { id: 'T1', name: 'Incident dashboard Monitoring, Critical INCs, MIM Dashboard (Backup - T2)' },
+    { id: 'T2', name: 'Non Autosys/ AUTOSYS/Automation Folder' },
+    { id: 'T3', name: 'HO, DD, Prod Line, All - Mailboxes, CT-Mission Control Dashboard, CTASK Assignments, DODCT(Backup - T4)' },
     { id: 'T4', name: "CTASK & INC's" },
-    { id: 'T5', name: 'Shift Monitoring, Change Approvals, Peer Reviews' },
+    { id: 'T5', name: 'Shift Monitoring, Initiatives, Change Approvals, CTasks, Peer Reviews, Noise Reduction' },
   ],
   breaks: [],
   dailyTaskset: {
