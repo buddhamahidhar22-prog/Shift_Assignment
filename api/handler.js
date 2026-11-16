@@ -107,7 +107,7 @@ export function createApiHandler({ readStore, saveStore }) {
           engineerId: engineer.id,
           name: engineer.name,
           status: 'Pending',
-          requestedAt: 'Just now',
+          requestedAt: new Date().toISOString(),
         }
         store.breaks.push(breakRequest)
         saveStore(store)
@@ -124,10 +124,10 @@ export function createApiHandler({ readStore, saveStore }) {
         if (!acknowledgingEngineer) return send(response, 400, { error: 'An acknowledging engineer is required' })
         if (acknowledgingEngineer.id === breakRequest.engineerId) return send(response, 400, { error: 'An engineer cannot acknowledge their own break' })
         breakRequest.status = 'Active'
-        breakRequest.duration = '00:01'
         breakRequest.acknowledgedById = acknowledgingEngineer.id
         breakRequest.acknowledgedBy = acknowledgingEngineer.name
         breakRequest.acknowledgedAt = new Date().toISOString()
+        breakRequest.startedAt = breakRequest.acknowledgedAt
         const engineer = store.engineers.find((item) => item.id === breakRequest.engineerId)
         if (engineer) {
           engineer.availability = 'On Break'
