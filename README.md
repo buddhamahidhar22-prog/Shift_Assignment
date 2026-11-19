@@ -260,11 +260,6 @@ The prototype persists data in [data/store.json](data/store.json) locally. The
 Vercel function uses in-memory state because serverless filesystem writes are
 not durable.
 
-<img width="1917" height="865" alt="Screenshot 2026-11-14 224530" src="https://github.com/user-attachments/assets/eb0e7d10-0ab0-49f4-9739-4e92c07fb24e" />
-<img width="1917" height="871" alt="Screenshot 2026-11-14 224515" src="https://github.com/user-attachments/assets/53196094-83e2-4369-bcce-5a280510a176" />
-<img width="1917" height="867" alt="Screenshot 2026-11-14 224501" src="https://github.com/user-attachments/assets/c65e5d2b-db49-4d99-90b5-dff55e9146f1" />
-<img width="1916" height="867" alt="Screenshot 2026-11-14 224411" src="https://github.com/user-attachments/assets/0c80e33d-6fcd-4223-800d-efad25fb6fc8" />
-
 Before production use, the development team should add:
 
 Add authentication and enforce permissions in the API, not only the UI.
